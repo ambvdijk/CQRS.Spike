@@ -15,52 +15,6 @@ namespace CQRS.Spike.Core
       _handlers = new Dictionary<Type, Action<ICommand>>();
     }
 
-    //public IEnumerable<IEvent> Dispatch(ICommand command)
-    //{
-    //  var commandType = command.GetType();
-    //  ICommandHandler handler = null;
-
-    //  if (_handlers.TryGetValue(commandType, out handler))
-    //  {
-    //    return ((dynamic)handler).Handle((dynamic)command);
-    //  }
-
-    //  // There can be a generic logging/tracing/auditing handlers
-    //  if (_handlers.TryGetValue(typeof(ICommand), out handler))
-    //  {
-    //    return ((dynamic)handler).Handle((dynamic)command);
-    //  }
-
-    //  return new[]
-    //  {
-    //    new UnhandledCommand
-    //    {
-    //      Id = command.Id,
-    //      Name = commandType.Name
-    //    }
-    //  };
-    //}
-
-    //public void Register(ICommandHandler handler)
-    //{
-    //  var genericHandler = typeof(ICommandHandler<>);
-    //  var supportedCommandTypes = handler.GetType()
-    //    .GetInterfaces()
-    //    .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == genericHandler)
-    //    .Select(i => i.GetGenericArguments()[0])
-    //    .ToList();
-
-    //  if (_handlers.Keys.Any(supportedCommandTypes.Contains))
-    //  {
-    //    throw new InvalidOperationException("The command handled by the received handler already has a registered handler.");
-    //  }
-
-    //  // Register this handler for each of he handled types.
-    //  foreach (var commandType in supportedCommandTypes)
-    //  {
-    //    _handlers.Add(commandType, handler);
-    //  }
-    //}
     public void Dispatch<TCommand>(TCommand command) where TCommand : ICommand
     {
       var commandType = typeof (TCommand);
@@ -104,7 +58,7 @@ namespace CQRS.Spike.Core
 
             var events = handler.Handle(aggregate, (TCommand) command);
 
-            //TODO: Publish events
+            //TODO: Publish events to queue / bus
             _eventStore.SaveEvents(command.Id, events, aggregate.EventsLoaded);
           }
         );
