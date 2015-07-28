@@ -1,7 +1,9 @@
-﻿namespace CQRS.Spike.Web.UI.Models
+﻿using CQRS.Spike.Domain.Models;
+
+namespace CQRS.Spike.Web.UI.Models
 {
-  public class TabViewModel : ViewModel
+  public class CompanyViewModel : ViewModel
   {
-    public int Table { get; set; }
+    public CompanyDetails Details { get; set; }
   }
 }

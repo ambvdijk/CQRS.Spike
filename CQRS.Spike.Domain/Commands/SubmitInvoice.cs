@@ -2,8 +2,8 @@
 
 namespace CQRS.Spike.Domain.Commands
 {
-  public class OpenTab : Command
+  public class SubmitInvoice : Command
   {
-    public int Table { get; set; }
+
   }
 }

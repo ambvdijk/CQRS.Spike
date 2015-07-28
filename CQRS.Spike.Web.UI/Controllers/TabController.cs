@@ -7,16 +7,16 @@ using CQRS.Spike.Web.UI.Models;
 
 namespace CQRS.Spike.Web.UI.Controllers
 {
-  public class TabController : Controller
+  public class CompanyController : Controller
   {
-    static TabController()
+    static CompanyController()
     {
-      Mapper.CreateMap<TabViewModel, OpenTab>();
+
     }
 
     private readonly ICommandBus _commandBus;
 
-    public TabController(ICommandBus commandBus)
+    public CompanyController(ICommandBus commandBus)
     {
       _commandBus = commandBus;
     }
@@ -28,14 +28,14 @@ namespace CQRS.Spike.Web.UI.Controllers
 
     public ActionResult Create()
     {
-      var viewModel = new TabViewModel();
+      var viewModel = new CompanyViewModel();
 
       if (Request.IsHttpGet() || !TryUpdateModel(viewModel))
       {
         return View(viewModel);
       }
 
-      _commandBus.Send(Mapper.Map<TabViewModel,OpenTab>(viewModel));
+      _commandBus.Send(Mapper.Map<CompanyViewModel,CreateCompany>(viewModel));
 
       return RedirectToAction("List");
     }

@@ -39,14 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandHandlers\CloseTabCommandHandler.cs" />
-    <Compile Include="CommandHandlers\OpenTabCommandHandler.cs" />
-    <Compile Include="Commands\CloseTab.cs" />
-    <Compile Include="Commands\OpenTab.cs" />
-    <Compile Include="Events\TabClosed.cs" />
-    <Compile Include="Events\TabOpened.cs" />
+    <Compile Include="CommandHandlers\CreateCompanyCommandHandler.cs" />
+    <Compile Include="CommandHandlers\SubmitInvoiceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\MarkInvoiceAsPayedCommandHandler.cs" />
+    <Compile Include="CommandHandlers\OpenInvoiceCommandHandler.cs" />
+    <Compile Include="Commands\CreateCompany.cs" />
+    <Compile Include="Commands\CreateCustomer.cs" />
+    <Compile Include="Commands\MarkInvoiceAsPayed.cs" />
+    <Compile Include="Commands\OpenInvoice.cs" />
+    <Compile Include="Commands\OpenProject.cs" />
+    <Compile Include="Commands\SubmitInvoice.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Events\CompanyCreated.cs" />
+    <Compile Include="Events\CustomerCreated.cs" />
+    <Compile Include="Events\InvoiceOpened.cs" />
+    <Compile Include="Events\InvoicePayed.cs" />
+    <Compile Include="Events\InvoiceSubmitted.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="Models\CompanyDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tab.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CQRS.Spike.Core\CQRS.Spike.Core.csproj">

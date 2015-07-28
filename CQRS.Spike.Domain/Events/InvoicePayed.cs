@@ -2,7 +2,7 @@
 
 namespace CQRS.Spike.Domain.Events
 {
-  public class TabClosed : Event
+  public class InvoicePayed : Event
   {
 
   }

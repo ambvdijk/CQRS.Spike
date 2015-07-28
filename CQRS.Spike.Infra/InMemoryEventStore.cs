@@ -20,6 +20,7 @@ namespace CQRS.Spike.Infra
       if (!_events.TryGetValue(aggregateId, out eventCollection))
       {
         eventCollection = new List<IEvent>();
+        _events.Add(aggregateId, eventCollection);
       }
 
       foreach (var @event in events)

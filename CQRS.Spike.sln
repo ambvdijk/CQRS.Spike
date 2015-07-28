@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{CFD5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Spike.Core.Tests", "Testing\CQRS.Spike.Core.Tests\CQRS.Spike.Core.Tests.csproj", "{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Spike.Domain.Tests", "Testing\CQRS.Spike.Domain.Tests\CQRS.Spike.Domain.Tests.csproj", "{27B92CDB-2C49-4AA3-988A-EBEFA20598B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,11 +43,16 @@ Global
 		{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B92CDB-2C49-4AA3-988A-EBEFA20598B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B92CDB-2C49-4AA3-988A-EBEFA20598B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B92CDB-2C49-4AA3-988A-EBEFA20598B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B92CDB-2C49-4AA3-988A-EBEFA20598B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{85FB3F83-63E7-424B-8E93-9DA9B9E34D39} = {CFD55DA0-0155-4180-98B8-439951780A87}
+		{27B92CDB-2C49-4AA3-988A-EBEFA20598B3} = {CFD55DA0-0155-4180-98B8-439951780A87}
 	EndGlobalSection
 EndGlobal
