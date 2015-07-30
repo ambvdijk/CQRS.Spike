@@ -8,7 +8,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CQRS.Spike.Domain.Tests
 {
   [TestClass]
-  public class CreateCompanyCommandHandlerTests : CommandHandlerTests<Company,CreateCompanyCommandHandler,CreateCompany>
+  public class CreateCompanyCommandHandlerTests 
+    : CommandHandlerTests<Company,CreateCompanyCommandHandler,CreateCompany>
   {
     [TestMethod]
     public void CreateCompanyCommandHandler_WillThrowOnEmptyDetails()

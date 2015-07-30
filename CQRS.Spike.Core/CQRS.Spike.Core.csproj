@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,22 +44,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aggregate.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="CommandDispatcher.cs" />
+    <Compile Include="CommandRegistrator.cs" />
+    <Compile Include="Configuration\ConnectionConfiguration.cs" />
+    <Compile Include="Configuration\ConnectionStringSettingsCollectionExtensions.cs" />
+    <Compile Include="Configuration\ConnectionStringWrapper.cs" />
+    <Compile Include="Data\IDatabase.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventDispatcher.cs" />
     <Compile Include="IAggregateFactory.cs" />
     <Compile Include="ICommandDispatcher.cs" />
     <Compile Include="ICommandHandlerRegistry.cs" />
     <Compile Include="ICommandProcessor.cs" />
+    <Compile Include="Configuration\IConnectionConfiguration.cs" />
+    <Compile Include="Configuration\IConnectionString.cs" />
     <Compile Include="IEventBus.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandBus.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="IEvent.cs" />
+    <Compile Include="IEventDispatcher.cs" />
     <Compile Include="IEventHandler.cs" />
+    <Compile Include="IEventHandlerRegistry.cs" />
+    <Compile Include="IEventMigrator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEventSpy.cs" />
     <Compile Include="IEventStore.cs" />
+    <Compile Include="InMemoryEventStore.cs" />
     <Compile Include="IProcessor.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\ITextSerializer.cs" />
+    <Compile Include="Serialization\JsonTextSerializer.cs" />
+    <Compile Include="SyncCommandBus.cs" />
+    <Compile Include="SyncEventBus.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

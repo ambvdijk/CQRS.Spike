@@ -7,10 +7,4 @@ namespace CQRS.Spike.Core
     Guid Id { get; }
     int Version { get; }
   }
-
-  public class Event : IEvent
-  {
-    public Guid Id { get; set; }
-    public int Version { get; set; }
-  }
 }

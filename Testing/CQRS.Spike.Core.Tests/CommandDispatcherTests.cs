@@ -15,16 +15,13 @@ namespace CQRS.Spike.Core.Tests
       var aggregateId = Guid.NewGuid();
 
       var eventStore = new Mock<IEventStore>(MockBehavior.Strict);
+      var eventBus = new Mock<IEventBus>(MockBehavior.Strict);
 
       eventStore
         .Setup(e => e.GetEventsForAggregate(aggregateId))
         .Returns(Enumerable.Empty<IEvent>());
 
-      eventStore
-        .Setup(e => e.SaveEvents(aggregateId, It.IsAny<IEnumerable<IEvent>>(), 0));
-        
-
-      var dispatcher = new CommandDispatcher(eventStore.Object);
+      var dispatcher = new CommandDispatcher(eventStore.Object,eventBus.Object);
       dispatcher.Register(new TestCommandHandler());
       dispatcher.Dispatch(new TestCommand {Id = aggregateId});
 
@@ -35,8 +32,9 @@ namespace CQRS.Spike.Core.Tests
     public void CommandDispatcherThrowsOnUnregisteredCommand()
     {
       var eventStore = new Mock<IEventStore>(MockBehavior.Strict);
+      var eventBus = new Mock<IEventBus>(MockBehavior.Strict);
 
-      var dispatcher = new CommandDispatcher(eventStore.Object);
+      var dispatcher = new CommandDispatcher(eventStore.Object,eventBus.Object);
 
       ExceptionAssert.Throws<InvalidOperationException>
       (
@@ -48,8 +46,9 @@ namespace CQRS.Spike.Core.Tests
     public void CommandDispatcherThrowsOnDuplicateRegisteredCommand()
     {
       var eventStore = new Mock<IEventStore>(MockBehavior.Strict);
+      var eventBus = new Mock<IEventBus>(MockBehavior.Strict);
 
-      var dispatcher = new CommandDispatcher(eventStore.Object);
+      var dispatcher = new CommandDispatcher(eventStore.Object, eventBus.Object);
 
       dispatcher.Register(new TestCommandHandler());
 

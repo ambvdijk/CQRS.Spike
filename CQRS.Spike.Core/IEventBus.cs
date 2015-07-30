@@ -1,7 +1,10 @@
-﻿namespace CQRS.Spike.Core
+﻿using System.Collections.Generic;
+
+namespace CQRS.Spike.Core
 {
   public interface IEventBus
   {
-    void Publish<T>(T @event) where T : IEvent;
+    void Publish(IEnumerable<IEvent> @events);
+    void Publish(IEvent @event);
   }
 }

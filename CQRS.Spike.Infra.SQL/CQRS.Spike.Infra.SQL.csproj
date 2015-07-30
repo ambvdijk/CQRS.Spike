@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}</ProjectGuid>
+    <ProjectGuid>{DD2F168A-ECDA-422A-8BF9-64089C6493C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CQRS.Spike.Core.Tests</RootNamespace>
-    <AssemblyName>CQRS.Spike.Core.Tests</AssemblyName>
+    <RootNamespace>CQRS.Spike.Infra.SQL</RootNamespace>
+    <AssemblyName>CQRS.Spike.Infra.SQL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,12 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandDispatcherTests.cs" />
-    <Compile Include="ExceptionAssert.cs" />
+    <Compile Include="SqlEventStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CQRS.Spike.Core\CQRS.Spike.Core.csproj">
+    <ProjectReference Include="..\CQRS.Spike.Core\CQRS.Spike.Core.csproj">
       <Project>{1B6AB28B-470D-4310-B57F-ACA29C47BC75}</Project>
       <Name>CQRS.Spike.Core</Name>
     </ProjectReference>

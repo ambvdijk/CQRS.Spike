@@ -51,8 +51,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CommandHandlerTests.cs" />
-    <Compile Include="CompanyTests.cs" />
+    <Compile Include="CreateCompanyCommandHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubmitInvoiceCommandHandlerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CQRS.Spike.Core\CQRS.Spike.Core.csproj">
@@ -62,10 +63,6 @@
     <ProjectReference Include="..\..\CQRS.Spike.Domain\CQRS.Spike.Domain.csproj">
       <Project>{08573122-0033-48FB-90C8-05D6AD491F01}</Project>
       <Name>CQRS.Spike.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CQRS.Spike.Infra\CQRS.Spike.Infra.csproj">
-      <Project>{37DD1C3C-9E14-437D-880B-56D5575BA7D2}</Project>
-      <Name>CQRS.Spike.Infra</Name>
     </ProjectReference>
     <ProjectReference Include="..\CQRS.Spike.Core.Tests\CQRS.Spike.Core.Tests.csproj">
       <Project>{85FB3F83-63E7-424B-8E93-9DA9B9E34D39}</Project>

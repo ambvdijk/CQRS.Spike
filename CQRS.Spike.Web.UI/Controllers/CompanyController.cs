@@ -11,7 +11,8 @@ namespace CQRS.Spike.Web.UI.Controllers
   {
     static CompanyController()
     {
-
+      Mapper.CreateMap<CompanyViewModel, CreateCompany>();
+      Mapper.AssertConfigurationIsValid();
     }
 
     private readonly ICommandBus _commandBus;

@@ -56,6 +56,7 @@
     <Compile Include="Events\InvoiceOpened.cs" />
     <Compile Include="Events\InvoicePayed.cs" />
     <Compile Include="Events\InvoiceSubmitted.cs" />
+    <Compile Include="Events\ProjectOpened.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="Models\CompanyDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
