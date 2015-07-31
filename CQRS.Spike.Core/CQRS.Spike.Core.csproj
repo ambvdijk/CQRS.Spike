@@ -46,13 +46,14 @@
     <Compile Include="Aggregate.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandDispatcher.cs" />
-    <Compile Include="CommandRegistrator.cs" />
+    <Compile Include="CommandHandlerAutoRegistrator.cs" />
     <Compile Include="Configuration\ConnectionConfiguration.cs" />
     <Compile Include="Configuration\ConnectionStringSettingsCollectionExtensions.cs" />
     <Compile Include="Configuration\ConnectionStringWrapper.cs" />
     <Compile Include="Data\IDatabase.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventDispatcher.cs" />
+    <Compile Include="EventHandlerAutoRegistrator.cs" />
     <Compile Include="IAggregateFactory.cs" />
     <Compile Include="ICommandDispatcher.cs" />
     <Compile Include="ICommandHandlerRegistry.cs" />

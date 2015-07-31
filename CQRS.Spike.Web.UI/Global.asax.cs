@@ -10,7 +10,7 @@ using CQRS.Spike.Core.Configuration;
 using CQRS.Spike.Core.Serialization;
 using CQRS.Spike.Domain.CommandHandlers;
 using CQRS.Spike.Infra.EntityFramework;
-using CQRS.Spike.Infra.SQL;
+using CQRS.Spike.Web.UI.ReadModels;
 
 namespace CQRS.Spike.Web.UI
 {
@@ -38,6 +38,11 @@ namespace CQRS.Spike.Web.UI
       builder
         .RegisterType<CreateCompanyCommandHandler>()
         .As<ICommandHandler>();
+
+      builder
+        .RegisterType<AdministrationReadModel>()
+        .AsImplementedInterfaces()
+        .SingleInstance();
 
       builder
         .RegisterType<JsonTextSerializer>()
@@ -76,7 +81,11 @@ namespace CQRS.Spike.Web.UI
         .SingleInstance();
 
       builder
-        .RegisterType<CommandRegistrator>()
+        .RegisterType<CommandHandlerAutoRegistrator>()
+        .AutoActivate();
+
+      builder
+        .RegisterType<EventHandlerAutoRegistrator>()
         .AutoActivate();
 
       // Register your MVC controllers.
