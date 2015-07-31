@@ -9,6 +9,7 @@ using CQRS.Spike.Core;
 using CQRS.Spike.Core.Configuration;
 using CQRS.Spike.Core.Serialization;
 using CQRS.Spike.Domain.CommandHandlers;
+using CQRS.Spike.Infra.EntityFramework;
 using CQRS.Spike.Infra.SQL;
 
 namespace CQRS.Spike.Web.UI
@@ -49,8 +50,8 @@ namespace CQRS.Spike.Web.UI
         .SingleInstance();
 
       builder
-        .RegisterType<SqlEventStore>()
-        .WithParameter("connectionName","EventStore")
+        .RegisterType<EventStore>()
+        .WithParameter("nameOrConnectionString", "EventStore")
         .As<IEventStore>()
         .SingleInstance();
 

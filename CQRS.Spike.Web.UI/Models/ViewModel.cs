@@ -10,5 +10,7 @@ namespace CQRS.Spike.Web.UI.Models
     }
 
     public Guid Id { get; set; }
+    public int OriginalVersion { get; set; }
+
   }
 }

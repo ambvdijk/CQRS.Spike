@@ -146,6 +146,10 @@
       <Project>{08573122-0033-48FB-90C8-05D6AD491F01}</Project>
       <Name>CQRS.Spike.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CQRS.Spike.Infra.EntityFramework\CQRS.Spike.Infra.EntityFramework.csproj">
+      <Project>{10FA9E14-8CB4-409F-94C1-32145A36739C}</Project>
+      <Name>CQRS.Spike.Infra.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CQRS.Spike.Infra.SQL\CQRS.Spike.Infra.SQL.csproj">
       <Project>{DD2F168A-ECDA-422A-8BF9-64089C6493C4}</Project>
       <Name>CQRS.Spike.Infra.SQL</Name>
